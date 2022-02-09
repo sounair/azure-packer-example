@@ -27,7 +27,9 @@
    
     {
       "type": "shell",
-      "script": "./bin/install.sh"
+      "script": "./bin/install.sh",
+      "execute_command":"echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+
     }
     
     
