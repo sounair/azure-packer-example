@@ -28,8 +28,7 @@
     {
       "type": "shell",
       "script": "./bin/install.sh",
-      "execute_command":"echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
-
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'"
     }
     
     
