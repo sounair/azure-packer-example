@@ -24,18 +24,10 @@
     "vm_size": "Standard_DS2_v2"
   }],
   "provisioners": [
-    {
-      "type": "file",
-      "source": "./bin/install.sh",
-      "destination": "/tmp/install.sh"
-    },
+   
     {
       "type": "shell",
-      "inline": ["chmod +x /tmp/install.sh","ls -ltr"]
-    },
-    {
-      "type": "shell",
-      "script": "/tmp/install.sh"
+      "script": "./bin/install.sh"
     }
     
     
