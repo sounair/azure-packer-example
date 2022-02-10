@@ -5,7 +5,13 @@ Wants=network-online.target
 [Service]
 Restart=always
 Type=simple
+<<<<<<< HEAD
 ExecStart="/projects/proj1/golang-hello-world/golang-hello-world -port 81"
 Environment='TEST=test'
 [Install]
 WantedBy=multi-user.target
+=======
+ExecStart=/projects/proj1/golang-hello-world/golang-hello-world -port 81
+[Install]
+WantedBy=multi-user.target
+>>>>>>> 4301380a669be7e5384c82990f1c99544ff4a1fc

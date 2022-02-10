@@ -1,16 +1,17 @@
 #!/bin/sh
-apt update
-apt install git
-apt install wget
+apt-get update -y
+apt-get install -y git wget nginx
 wget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz
-sudo tar -xvf go1.16.4.linux-amd64.tar.gz
-sudo mv go /usr/local 
+tar -xvf go1.16.4.linux-amd64.tar.gz
+mv go /usr/local
+mv /tmp/golang.service /etc/systemd/system/golang.service
+ln -s /usr/local/go/bin/go /usr/local/bin/go
+mkdir -p /projects/proj1
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/Projects/Proj1 
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
-sudo cd ~/Projects/Proj1
+export GOPATH=/usr/local 
+cd /projects/proj1 
 git clone "https://github.com/skanayi/golang-hello-world.git"
 cd golang-hello-world/
 git checkout 1.0.3
 go build
-./ -port 81
+
