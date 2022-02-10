@@ -5,6 +5,7 @@ wget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz
 tar -xvf go1.16.4.linux-amd64.tar.gz
 mv go /usr/local
 mv /tmp/golang.service /etc/systemd/system/golang.service
+# create a shortcut
 ln -s /usr/local/go/bin/go /usr/local/bin/go
 mkdir -p /projects/proj1
 export GOROOT=/usr/local/go
