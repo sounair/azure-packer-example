@@ -1,0 +1,10 @@
+[Unit]
+Description=This unit will start after internet connection
+After=network.target
+Wants=network-online.target
+[Service]
+Restart=always
+Type=simple
+ExecStart=/projects/proj1/golang-hello-world/golang-hello-world -port 81
+[Install]
+WantedBy=multi-user.target
