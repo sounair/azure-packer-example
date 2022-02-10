@@ -7,8 +7,8 @@
     "tenant_id": "ac312fcc-3092-4729-82a8-2d6a19d0f129",
     "subscription_id": "",
 
-    "managed_image_resource_group_name": "",
-    "managed_image_name": "myPackerImage",
+    "managed_image_resource_group_name": "soumya2",
+    "managed_image_name": "mygolangimage",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
@@ -27,8 +27,9 @@
    
     {
       "type": "shell",
-      "script": "./bin/install.sh",
-      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'"
+      "script":["./bin/install.sh"]
+
+    
     }
     
     
