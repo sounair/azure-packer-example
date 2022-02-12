@@ -23,7 +23,7 @@ stages:
             steps:
               - task: "AzureKeyVault@2"
                 inputs:
-                  azureSubscription: 'b791e0a8-9e09-40ba-bbf0-21e6e29d2e67'
+                  connectedServiceName: 'kv_read'
                   KeyVaultName: 'azure-key-pair'
                   SecretsFilter: '*'
                   RunAsPreJob: false
