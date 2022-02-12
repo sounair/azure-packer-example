@@ -28,8 +28,9 @@ stages:
                   SecretsFilter: '*'
                   RunAsPreJob: false
               - bash: |
-                  echo "Secret Found! $MY_MAPPED_ENV_VAR"        
+                  packer build -var "az_client_secret=$env_client_secret" -var "aws_sub_kid=$env_sub_id"  ubuntu.json       
                 env:
-                  MY_MAPPED_ENV_VAR: $(client-secret)
+                  env_client_secret: $(client-secret)
+                  env_sub_id: $(sub-id) 
                       
               
