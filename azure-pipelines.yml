@@ -10,13 +10,13 @@ pool:
     vmImage: ubuntu-latest
   
 stages:
-      - stage: "Installing Packer"
+      - stage: "Installing_Packer"
         displayName: Packer
         jobs: 
           - job: install
             steps:
               - bash: sh packer_setup.sh
-      - stage: "Building image"
+      - stage: "Building_image"
         displayName: Build
         jobs: 
           - job: build
