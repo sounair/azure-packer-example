@@ -9,11 +9,18 @@ trigger:
 pool:
     vmImage: ubuntu-latest
   
-steps:
-  - script: echo Hello, Sia!
-    displayName: 'Run a one-line script'
-  
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
+stages:
+      - stage: Installing Packer
+        displayName: Packer
+        jobs: 
+          - job: install
+            steps:
+              - bash: sh packer_setup.sh
+      - stage: Building image
+        displayName: Build
+        jobs: 
+          - job: build
+            steps:
+              - bash: packer build -var 'az_client_secret=YgF~0Tdf~KFhWOQP6_WPBvI7D6JFnGPmaz' -var 'aws_sub_kid=b791e0a8-9e09-40ba-bbf0-21e6e29d2e67'  ubuntu.json
+
+              
