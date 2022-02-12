@@ -27,7 +27,10 @@ stages:
                   KeyVaultName: 'azure-key-pair'
                   SecretsFilter: '*'
                   RunAsPreJob: false
+              - task: Bash@3
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                          packer build -var "az_client_secret=$client-secret" -var "aws_sub_kid=$sub-id"  ubuntu.json
                       
-              - bash: 'packer build -var "az_client_secret=$client-secret" -var "aws_sub_kid=$sub-id"  ubuntu.json'
-
               
