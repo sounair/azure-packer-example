@@ -28,7 +28,7 @@ stages:
                   SecretsFilter: '*'
                   RunAsPreJob: false
               - bash: |
-                  echo "Secret Found! ${MY_MAPPED_ENV_VA}"        
+                  echo "Secret Found! $MY_MAPPED_ENV_VAR"        
                 env:
                   MY_MAPPED_ENV_VAR: $(client-secret)
                       
