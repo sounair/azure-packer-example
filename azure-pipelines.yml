@@ -28,9 +28,7 @@ stages:
                   SecretsFilter: '*'
                   RunAsPreJob: false
               - bash: |
-                  packer build -var "az_client_secret=$env_client_secret" -var "aws_sub_kid=$env_sub_id"  ubuntu.json       
-                env:
-                  env_client_secret: $(client-secret)
-                  env_sub_id: $(sub-id) 
+                  packer build -var "az_client_secret=$client-secret" -var "aws_sub_kid=$sub_id"  ubuntu.json       
+               
                       
               
