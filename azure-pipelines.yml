@@ -27,7 +27,7 @@ stages:
                   KeyVaultName: 'azure-key-pair-new'
                   SecretsFilter: '*'
                   RunAsPreJob: false
-              - task: DownloadPipelineArtifact@2
+              - task: DownloadBuildArtifacts@0
                 inputs:
                   source:  specific
                   project: golang-webapp
