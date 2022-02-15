@@ -33,6 +33,7 @@ stages:
                   project: golang-webapp
                   pipeline: 9
                   artifact: WebApp 
+                  runVersion: latest
               - bash: |
                   ls -lrt
                   pwd 
