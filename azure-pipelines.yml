@@ -15,6 +15,15 @@ stages:
         jobs: 
           - job: install
             steps:
+              - task: DownloadPipelineArtifact@2
+                inputs:
+                  source:  specific
+                  project: golang-webapp
+                  pipeline: 9
+                  artifact: WebApp 
+              - bash: |
+                  ls -lrt
+                  pwd 
               - bash: sh packer_setup.sh
       - stage: "Building_image"
         displayName: Build
@@ -27,15 +36,7 @@ stages:
                   KeyVaultName: 'azure-key-pair-new'
                   SecretsFilter: '*'
                   RunAsPreJob: false
-              - task: DownloadPipelineArtifact@2
-                inputs:
-                  source:  specific
-                  project: ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9
-                  pipeline: 9
-                  artifact: WebApp 
-              - bash: |
-                  ls -lrt
-                  pwd 
+
 
                  
                
