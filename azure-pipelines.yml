@@ -17,10 +17,12 @@ stages:
             steps:
               - task: DownloadPipelineArtifact@2
                 inputs:
-                  source:  specific
-                  project: golang-webapp
-                  pipeline: 9
-                  artifact: WebApp 
+                  buildType: 'specific'
+                  project: 'ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9'
+                  definition: '9'
+                  buildVersionToDownload: 'latest'
+                  artifactName: 'WebApp'
+                  targetPath: '$(Pipeline.Workspace)'
               - bash: |
                   ls -lrt
                   pwd 
