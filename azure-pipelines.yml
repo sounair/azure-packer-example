@@ -27,13 +27,12 @@ stages:
                   KeyVaultName: 'azure-key-pair-new'
                   SecretsFilter: '*'
                   RunAsPreJob: false
-              - task: DownloadBuildArtifacts@0
+              - task: DownloadPipelineArtifact@2
                 inputs:
                   source:  specific
-                  project: golang-webapp
+                  project: ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9
                   pipeline: 9
                   artifact: WebApp 
-                  runVersion: latest
               - bash: |
                   ls -lrt
                   pwd 
