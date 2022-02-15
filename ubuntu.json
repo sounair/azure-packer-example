@@ -8,7 +8,7 @@
     "subscription_id":"{{user `aws_sub_kid`}}",
 
     "managed_image_resource_group_name": "soumya2",
-    "managed_image_name": "golang_4",
+    "managed_image_name": "golang_7",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
