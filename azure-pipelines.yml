@@ -31,7 +31,7 @@ stages:
                   definition: '9'
                   buildVersionToDownload: 'latest'
                   artifactName: 'WebApp'
-                  targetPath: '$(Pipeline.Workspace)'
+                  targetPath: '$(System.DefaultWorkingDirectory)'
               - task: "AzureKeyVault@2"
                 inputs:
                   connectedServiceName: 'kv_read'
@@ -40,5 +40,5 @@ stages:
                   RunAsPreJob: false
               - bash: |
                   ls -lrt
-                  ls -lrt $(Pipeline. Workspace)
+                  ls -lrt "$(Pipeline. Workspace)"
                   pwd 
