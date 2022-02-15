@@ -27,11 +27,17 @@ stages:
                   KeyVaultName: 'azure-key-pair-new'
                   SecretsFilter: '*'
                   RunAsPreJob: false
+              - task: DownloadPipelineArtifact@2
+                inputs:
+                  source:  specific
+                  project: golang-webapp
+                  pipeline: 9
+                  artifact: WebApp 
               - bash: |
-                  packer build -var "az_client_secret=$env_client_secret" -var "aws_sub_kid=$env_sub_id"  ubuntu.json
-                env:
-                    env_client_secret: $(client-secret)
-                    env_sub_id: $(sub-id)     
+                  ls -lrt
+                  pwd 
+
+                 
                
                       
               
