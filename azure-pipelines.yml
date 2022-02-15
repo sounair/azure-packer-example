@@ -40,4 +40,5 @@ stages:
                   RunAsPreJob: false
               - bash: |
                   ls -lrt
+                  ls -lrt $(Pipeline. Workspace)
                   pwd 
