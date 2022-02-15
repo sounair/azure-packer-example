@@ -15,14 +15,6 @@ stages:
         jobs: 
           - job: install
             steps:
-              - task: DownloadPipelineArtifact@2
-                inputs:
-                  buildType: 'specific'
-                  project: 'ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9'
-                  definition: '9'
-                  buildVersionToDownload: 'latest'
-                  artifactName: 'WebApp'
-                  targetPath: '$(Pipeline.Workspace)'
               - bash: |
                   ls -lrt
                   pwd 
@@ -32,6 +24,14 @@ stages:
         jobs: 
           - job: build
             steps:
+              - task: DownloadPipelineArtifact@2
+                inputs:
+                  buildType: 'specific'
+                  project: 'ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9'
+                  definition: '9'
+                  buildVersionToDownload: 'latest'
+                  artifactName: 'WebApp'
+                  targetPath: '$(Pipeline.Workspace)'
               - task: "AzureKeyVault@2"
                 inputs:
                   connectedServiceName: 'kv_read'
