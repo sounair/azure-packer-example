@@ -3,9 +3,12 @@
   
   
     "variables": {
-      "my_secret": "{{env `env_imagename`}}",
-      "not_a_secret": "plaintext",
-      "foo": "bar"
+      "image": "{{env `env_imagename`}}"
+      
+    },
+    "variables": {
+      "build": "{{env `env_build`}}"
+      
     },
    
   
