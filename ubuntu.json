@@ -12,7 +12,7 @@
     "subscription_id":"{{user `aws_sub_kid`}}",
 
     "managed_image_resource_group_name": "soumya2",
-    "managed_image_name": "{{user `image`}}:{{user `build}}",
+    "managed_image_name": "{{user `image`}}:{{user `build'}}",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
