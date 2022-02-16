@@ -2,6 +2,7 @@
 {
   "variables": {
     "my_image_name": "{{System.TeamProject}}",
+  },
     
 
   "builders": [{
