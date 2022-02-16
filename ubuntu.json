@@ -1,8 +1,6 @@
 
 {
-  "variables": {
-    "my_image_name": "{{System.TeamProject}}",
-  },
+  
     
 
   "builders": [{
@@ -14,7 +12,7 @@
     "subscription_id":"{{user `aws_sub_kid`}}",
 
     "managed_image_resource_group_name": "soumya2",
-    "managed_image_name": "my_image_namw",
+    "managed_image_name": "{{user `image`}}:{{user `build}}",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",

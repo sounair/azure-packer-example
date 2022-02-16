@@ -50,8 +50,10 @@ stages:
 
 
               - bash: |
-                  packer build -var "az_client_secret=$env_client_secret" -var "aws_sub_kid=$env_sub_id"  ubuntu.json
+                  packer build -var "az_client_secret=$env_client_secret" -var "aws_sub_kid=$env_sub_id" -var "image=$env_imagename" -var "build=$env_build" ubuntu.json
                 env:
                     env_client_secret: $(client-secret)
-                    env_sub_id: $(sub-id)  
+                    env_sub_id: $(sub-id) 
+                    env_imagename: $(System.TeamProject)
+                    env_build: $(Build.BuildId)
                   
