@@ -1,4 +1,9 @@
+
 {
+  "variables": {
+    "my_image_name": "{{System.TeamProject}}",
+    
+
   "builders": [{
     "type": "azure-arm",
 
@@ -8,7 +13,7 @@
     "subscription_id":"{{user `aws_sub_kid`}}",
 
     "managed_image_resource_group_name": "soumya2",
-    "managed_image_name": "$System.TeamProject",
+    "managed_image_name": "my_image_namw",
 
     "os_type": "Linux",
     "image_publisher": "Canonical",
