@@ -3,13 +3,11 @@
   
   
     "variables": {
-      "image": "{{env `env_imagename`}}"
-      
-    },
-    "variables": {
+      "image": "{{env `env_imagename`}}",
       "build": "{{env `env_build`}}"
       
     },
+    
    
   
    
