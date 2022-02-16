@@ -2,6 +2,12 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+resources:
+  pipelines:
+  - pipeline: golang-web   # Internal name of the source pipeline, used elsewhere within app-ci YAML                         # e.g. to reference published artifacts
+    source: golang-webapp # Azure Pipelines name of the source pipeline referenced
+    project: golang-webapp # Required only if the source pipeline is in another project
+    trigger: true # Run app-ci pipeline when any run of security-lib-ci completes
 
 trigger:
   - main
