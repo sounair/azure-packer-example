@@ -36,7 +36,7 @@ stages:
                   project: 'ac00ecf6-fd0e-491e-be0c-a5f0b3ba47d9'
                   definition: '9'
                   buildVersionToDownload: 'latest'
-                  artifactName: 'WebApp'
+                  artifactName: 'WebAppgolang'
                   targetPath: '$(System.DefaultWorkingDirectory)'
               - task: "AzureKeyVault@2"
                 inputs:
